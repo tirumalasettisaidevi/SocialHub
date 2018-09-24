@@ -11,5 +11,8 @@ public interface BlogPostDao
 	List<BlogPost> getApprovedBlogs();
 	List<BlogPost> getBlogsWaitingForApproval();
 	BlogPost getBlogPost(int id);
+	void updateBlogPost(BlogPost blogPost);
+	void deleteBlogPost(BlogPost blogPost);
+
 
 }

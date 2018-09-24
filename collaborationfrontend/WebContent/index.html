@@ -18,6 +18,7 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
 	rel="stylesheet" />
+	<link rel="stylesheet" href="resources/css/notification.css">
 </head>
 <body ng-app="app">
 <div class="container">
@@ -60,13 +61,29 @@
 				 <li class="dropdown" ng-show="user.email!=undefined" ><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">BlogPost <span class="caret"></span></a>
 					
-				<ul class="dropdown-menu">
-				
+				<ul class="dropdown-menu">	
 				<li ><a href="#/addblogpost">Add BlogPost</a></li>
 				<li><a href="#/getblogs">Blogs</a></li>
 				<li ng-show="user.role=='ADMIN'"><a href="#/blogswaitingforapproval">Blogs Waiting for Approval</a>
 				</ul>
 			   </li>
+			   
+			   
+			    <li class="dropdown" >
+<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="user.email!=undefined"> 
+<span class="glyphicon glyphicon-globe" > 
+  <span class="rw-number-notification" ng-if="notificationCount>0">{{notificationCount}}</span></span></a>
+   <ul class="dropdown-menu" >
+  <span class="dropdown-content">
+   <li ng-repeat="notification in notifications">
+     <a href="#/getnotification/{{notification.id}}">Blogpost Titled <b>"{{notification.blogPostTitle}}"</b> approval status is updated..click here to view status</a>
+     <hr>
+   </li>
+   </span>
+   </ul>
+</li>
+			   
+			   
                    <li ng-show="user.email!=undefined"><a href="" ng-click="logout()">Sign out</a></li>
 					</ul>
 
@@ -95,4 +112,8 @@
 <script type="text/javascript" src="controllers/blogpostcontroller.js"></script>
 <script type="text/javascript" src="services/blogpostservice.js"></script>
 <script type="text/javascript" src="controllers/blogindetailcontroller.js"></script>
+<script type="text/javascript" src="controllers/homecontroller.js"></script>
+<script type="text/javascript" src="controllers/notificationcontroller.js"></script>
+<script type="text/javascript" src="services/notificationservice.js"></script>
 </html>
+

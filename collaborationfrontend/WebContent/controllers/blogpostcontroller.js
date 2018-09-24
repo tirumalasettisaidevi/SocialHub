@@ -41,3 +41,4 @@ app.controller('BlogPostCtrl',function($scope,$location,BlogPostService,$rootSco
 	getBlogsWaitingForApproval()
 	
 })
+

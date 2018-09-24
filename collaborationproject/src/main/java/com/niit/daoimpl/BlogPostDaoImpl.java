@@ -40,6 +40,15 @@ public class BlogPostDaoImpl implements BlogPostDao
 			List<BlogPost> blogPosts=query.list();
 			return blogPosts;
 		}
+		public void updateBlogPost(BlogPost blogPost)
+		{
+			
+			
+		}
+		public void deleteBlogPost(BlogPost blogPost) {
+			
+			
+		}
 
 	
 }

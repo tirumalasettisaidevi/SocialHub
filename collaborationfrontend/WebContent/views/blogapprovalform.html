@@ -7,8 +7,15 @@
 	<div class="panel-body">
 		<p ng-bind-html="content">
 	</div>
-Likes : {{blogPost.likes}}<br>
-
-<a href="#/getblogs">Get all blogs</a>
+	<div>
+	<button class="btn btn-info" ng-click="approveBlogPost(blogPost)" >Approve</button>
+	<button class="btn btn-danger" ng-click="showTextArea()" >Reject</button>
+	<div ng-show="isRejected">
+	<textarea ng-model="rejectionReason">
+	
+	</textarea>
+    <button ng-click="rejectBlogPost(blogPost)" >Submit </button>
+    </div>
+	</div>
 </div>
 
